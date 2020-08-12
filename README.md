@@ -185,5 +185,5 @@ Type=Application
 Categories=Development;Programming
 StartupNotify=false" \
 >> ~/.local/share/applications/eclipse.desktop
-killall gnome-panel
+cinnamon --replace
 ```
