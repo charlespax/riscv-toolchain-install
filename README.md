@@ -124,3 +124,8 @@ else
 	sudo dpkg -i ~/Downloads/JLink_Linux_V682c_x86_64.deb
 fi
 ```
+
+# install OpenOCD
+```
+xpm install --global @xpack-dev-tools/openocd@latest
+```
