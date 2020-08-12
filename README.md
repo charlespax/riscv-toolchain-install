@@ -134,9 +134,10 @@ else
 fi
 ```
 
-# install QEMU
+# install QEMU (DON'T DO)
+This iseems to be for ARM, so maybe don't install it.
 ```
-if comman d -v qemu; then
+if comman d -v ~/opt/xPacks/@xpack-dev-tools/qemu-arm/2.8.0-9.1; then
         echo "qemu is already installed."
 else
         xpm install --global @xpack-dev-tools/qemu-arm@latest
