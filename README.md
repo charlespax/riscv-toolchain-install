@@ -161,11 +161,18 @@ fi
 
 Extract eclipse
 ```
-if [[ -d ~/eclipse ]]; then
-	echo "eclipse directory already exists."
-else
-	mkdir ~/eclipse
-fi
-
-tar -xvzf ~/Downloads/*gnumcueclipse*.tar.gz -C ~/eclipse
+tar -xvzf ~/Downloads/*gnumcueclipse*.tar.gz -C ~/
+```
+Make a menu shortcut
+```
+ECLIPSE=/eclipse/eclipse
+FULL_PATH=$HOME$ECLIPSE
+echo \
+[Desktop Entry] \
+Name=Eclipse \
+Exec=$FULL_PATH \
+Terminal=false \
+Type=Application \
+Icon=/full/path/to/the/icon-file \
+>> ~/.local/chare/applications/eclipse.desktop
 ```
