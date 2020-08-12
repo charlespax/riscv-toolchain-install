@@ -1,3 +1,5 @@
+This document was last updated on 2020-08-11
+
 # riscv-toolchain-install
 Notes on how to install gnu-mcu-eclipse for risc-v development, specifically on the Logan Nano board (GD32VF103).
 
@@ -93,6 +95,14 @@ fi
 ```
 
 # install Segger J-Link support
+The JLink software depends on the `ncurses` library. Install it by executing the following command.
+```
+if command -v ncurses; then
+        echo "jlink is already installed."
+else
+	sudo apt-get install ncurses
+fi
+
 Go to https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb, accept the agreement by ckecking the box, and click "Download."
 
 Save the file to your Downloads direction `~/Downloads`. Execute the following command.
