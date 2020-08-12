@@ -95,6 +95,9 @@ fi
 ```
 
 # install Segger J-Link support
+Note: Segger's Longan Nano wiki page https://wiki.segger.com/SiPeed_Longan_Nano
+Note: J-Link hardware revisions 10 and above support risc-v, lower revisions do not. For a feature comparison overview see https://wiki.segger.com/Software_and_Hardware_Features_Overview
+
 The JLink software depends on the `ncurses` library. Install it by executing the following command.
 ```
 if command -v ncurses; then
