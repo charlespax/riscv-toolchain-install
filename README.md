@@ -83,8 +83,7 @@ fi
 
 # install xpack-dev-tools
 ```
-if [[ -d ~/github/dotfiles ]]; then
-if command -v riscv-none-embed-gcc; then
+if command -v ~/opt/xPacks/\@xpack-dev-tools/riscv-none-embed-gcc/8.3.0-1.2.1/.content/bin/riscv-none-embed-gcc; then
 	echo "riscv-non-embed-gcc is already installed."
 else
 	xpm install --global @xpack-dev-tools/riscv-none-embed-gcc@latest
