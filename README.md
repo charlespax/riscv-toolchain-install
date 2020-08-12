@@ -16,7 +16,7 @@ There is no special instructions here.
 ## Install Linux Mint 20 (optional)
 Maybe another version or distro would work, but this is what I'm using here. When the system is installed, do a system update using the following command.
 ```
-sudo apt-get update -y;
+sudo apt-get update -y
 sudo apt-get dist-upgrade -y
 sudo apt-get autoremove -y
 ```
@@ -100,6 +100,8 @@ fi
 ```
 
 # install Segger J-Link support
+The instructions that I've read all utilize the Segger J-Link debugger probe. For hobbiests, just go buy the education version (https://www.segger.com/products/debug-probes/j-link/models/j-link-edu-mini/). Get that working before trying to use another probe.
+
 Note: Segger's Longan Nano wiki page https://wiki.segger.com/SiPeed_Longan_Nano
 Note: J-Link hardware revisions 10 and above support risc-v, lower revisions do not. For a feature comparison overview see https://wiki.segger.com/Software_and_Hardware_Features_Overview
 
