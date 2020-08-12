@@ -183,6 +183,6 @@ Icon=$HOME$ICON
 Terminal=false
 Type=Application
 Categories=Development;Programming
-StartupNotify=false \
+StartupNotify=false" \
 >> ~/.local/share/applications/eclipse.desktop
 ```
