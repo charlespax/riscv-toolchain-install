@@ -155,7 +155,7 @@ ECLIPSE_FILE=https://github-production-release-asset-2e65be.s3.amazonaws.com/927
 cd ~/Downloads
 
 if command -v wget; then
-        wget -c  -o ~/Downloads/eclipse.tar.gz $ECLIPSE_FILE
+        wget -c $ECLIPSE_FILE
 fi
 ```
 
@@ -167,5 +167,5 @@ else
 	mkdir ~/eclipse
 fi
 
-tar -xvzf ~/Downloads/eclipse.tar.gz -C ~/eclipse
+tar -xvzf ~/Downloads/*gnumcueclipse*.tar.gz -C ~/eclipse
 ```
