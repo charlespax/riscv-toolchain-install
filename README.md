@@ -127,5 +127,9 @@ fi
 
 # install OpenOCD
 ```
-xpm install --global @xpack-dev-tools/openocd@latest
+if command -v ~/opt/xPacks/@xpack-dev-tools/openocd/0.10.0-14.3/.content/bin/openocd; then
+	echo "openocd is already installed."
+else
+        xpm install --global @xpack-dev-tools/openocd@latest
+fi
 ```
