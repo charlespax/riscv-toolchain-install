@@ -51,8 +51,7 @@ else
 fi
 ```
 
-# install  node.js (SKIP)
-Do not execute this section. We'll use npm to install nodejs
+# install  node.js
 ```
 if [[ -d ~/github/dotfiles ]]; then
 if command -v nodejs; then
