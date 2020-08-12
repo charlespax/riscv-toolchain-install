@@ -151,9 +151,11 @@ This should already be installed.
 
 ```
 
-ECLIPSE_FILE=https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases/download/v4.7.2-20200127-2019-12/20200127-1311-gnumcueclipse-4.7.2-2019-12-R-linux.gtk.x86_64.tar.gz
+ECLIPSE_FILE=https://github-production-release-asset-2e65be.s3.amazonaws.com/92777692/aca90500-4118-11ea-9a74-7556a740493a?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200812%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200812T205855Z&X-Amz-Expires=300&X-Amz-Signature=d8eb15adb5fa6adcd8dbc41db6868670570bbe3519a028fe5c6687b73cdffd03&X-Amz-SignedHeaders=host&actor_id=281642&repo_id=92777692&response-content-disposition=attachment%3B%20filename%3D20200127-1311-gnumcueclipse-4.7.2-2019-12-R-linux.gtk.x86_64.tar.gz&response-content-type=application%2Foctet-stream
+
+cd ~/Downloads
 
 if command -v curl; then
-        curl -C - --output ~/Downloads/eclipse.tar.gz $ECLIPSE_FILE
+        curl  $ECLIPSE_FILE
 fi
 ```
