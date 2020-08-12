@@ -1,5 +1,3 @@
-This document was last updated on 2020-08-11
-
 # riscv-toolchain-install
 Notes on how to install gnu-mcu-eclipse for risc-v development, specifically on the Logan Nano board (GD32VF103).
 
