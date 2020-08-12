@@ -47,13 +47,12 @@ if [[ -d ~/github/dotfiles ]]; then
 else
 	cd ~/github
 	git clone https://github.com/charlespax/dotfiles
-	~/github/dotfiles/link.sh
+	bash ~/github/dotfiles/link.sh
 fi
 ```
 
 # install  node.js
 ```
-if [[ -d ~/github/dotfiles ]]; then
 if command -v nodejs; then
 	echo "node.js is already installed."
 else
@@ -64,7 +63,6 @@ fi
 
 # install npm
 ```
-if [[ -d ~/github/dotfiles ]]; then
 if command -v npm; then
 	echo "npm is already installed."
 else
@@ -75,7 +73,6 @@ fi
 
 # install xpm
 ```
-if [[ -d ~/github/dotfiles ]]; then
 if command -v xpm; then
 	echo "xpm is already installed."
 else
