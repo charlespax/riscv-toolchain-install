@@ -133,3 +133,12 @@ else
         xpm install --global @xpack-dev-tools/openocd@latest
 fi
 ```
+
+# install QEMU
+```
+if comman d -v qemu; then
+        echo "qemu is already installed."
+else
+        xpm install --global @xpack-dev-tools/qemu-arm@latest
+fi
+```
