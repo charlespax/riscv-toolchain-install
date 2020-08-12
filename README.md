@@ -150,7 +150,7 @@ This should already be installed.
 # install Eclipse and CDT
 
 ```
-ECLIPSE_FILE=https://www.eclipse.org/downloads/download.php?file=/embed-cdt/packages/2020-06/eclipse-embedcdt-2020-06-R-linux.gtk.x86_64.tar.gz
+ECLIPSE_FILE=https://www.eclipse.org/downloads/download.php?file=/embed-cdt/packages/2020-06/eclipse-embedcdt-2020-06-R-linux.gtk.x86_64.tar.gz&mirror_id=1135
 
 cd ~/Downloads
 
