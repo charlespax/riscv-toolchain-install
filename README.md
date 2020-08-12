@@ -172,13 +172,17 @@ else
 fi
 
 ECLIPSE=/eclipse/eclipse
+ICON=/eclipse/icon.xpm
 FULL_PATH=$HOME$ECLIPSE
-echo "
-[Desktop Entry]
-Name=Eclipse
+echo " [Desktop Entry]
+Encoding=UTF-8
+Name=Eclipse IDE
+Comment=Eclipse IDE
 Exec=$FULL_PATH
+Icon=$HOME$ICON
 Terminal=false
 Type=Application
-Icon=/full/path/to/the/icon-file" \
+Categories=Development;Programming
+StartupNotify=false \
 >> ~/.local/share/applications/eclipse.desktop
 ```
