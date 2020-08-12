@@ -13,8 +13,13 @@ I am doing this using VirtualBox running on a linux host. I recomment doing the 
 ## Install VirtualBox (optional)
 There is no special instructions here.
 
-## Install Ubuntu 20.04 (optional)
-Maybe another version or distro would work, but this is what I'm using here.
+## Install Linux Mint 20 (optional)
+Maybe another version or distro would work, but this is what I'm using here. When the system is installed, do a system update using the following command.
+```
+sudo apt-get update -y;
+sudo apt-get dist-upgrade -y
+sudo apt-get autoremove -y
+```
 
 ## Install Virtual guest additions (optional)
 We'll probably want the Guest Additions in order to copy and paste between the host operating system and the guest operating system. This is not necessary, but it can make things convenient.
