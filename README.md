@@ -100,7 +100,7 @@ The JLink software depends on the `ncurses` library. Install it by executing the
 if command -v ncurses; then
         echo "jlink is already installed."
 else
-	sudo apt-get install ncurses
+	sudo apt-get install libncurses5
 fi
 
 Go to https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb, accept the agreement by ckecking the box, and click "Download."
