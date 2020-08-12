@@ -168,7 +168,7 @@ Make a menu shortcut
 if [[ -d ~/.local/share/applications ]]; then
 	echo "shortfut dir exists."
 else
-	mkdir ~/.local/share/applications
+	mkdir -p ~/.local/share/applications
 fi
 
 ECLIPSE=/eclipse/eclipse
