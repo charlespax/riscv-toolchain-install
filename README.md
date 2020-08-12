@@ -174,11 +174,11 @@ fi
 ECLIPSE=/eclipse/eclipse
 FULL_PATH=$HOME$ECLIPSE
 echo \
-[Desktop Entry] \
-Name=Eclipse \
-Exec=$FULL_PATH \
-Terminal=false \
-Type=Application \
+[Desktop Entry] \n
+Name=Eclipse \n
+Exec=$FULL_PATH \n
+Terminal=false \n
+Type=Application \n
 Icon=/full/path/to/the/icon-file \
 >> ~/.local/share/applications/eclipse.desktop
 ```
