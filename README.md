@@ -106,7 +106,7 @@ fi
 
 Go to https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb, accept the agreement by ckecking the box, and click "Download."
 
-Save the file to your Downloads direction `~/Downloads`. Execute the following command.
+Save the file to your Downloads directory `~/Downloads`. Execute the following command.
 ```
 if command -v JLinkGDBServer; then
 	echo "jlink is already installed."
