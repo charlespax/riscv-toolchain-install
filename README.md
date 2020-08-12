@@ -143,3 +143,17 @@ else
         xpm install --global @xpack-dev-tools/qemu-arm@latest
 fi
 ```
+
+# install java
+This should already be installed.
+
+# install Eclipse and CDT
+
+```
+
+ECLIPSE_FILE=https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases/download/v4.7.2-20200127-2019-12/20200127-1311-gnumcueclipse-4.7.2-2019-12-R-linux.gtk.x86_64.tar.gz
+
+if command -v curl; then
+        curl -C - --output ~/Downloads/eclipse.tar.gz $ECLIPSE_FILE
+fi
+```
