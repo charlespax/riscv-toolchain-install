@@ -156,6 +156,14 @@ ECLIPSE_FILE=https://github-production-release-asset-2e65be.s3.amazonaws.com/927
 cd ~/Downloads
 
 if command -v wget; then
-        wget -c  $ECLIPSE_FILE
+        wget -c  -o ~/Downloads/eclipse.tar.gz $ECLIPSE_FILE
 fi
+
+if [[ -d ~/eclipse ]]; then
+	echo "eclipse directory already exists."
+else
+	mkdir ~/eclipse
+fi
+
+tar -xvzf ~/Downloads/eclipse.tar.gz -C ~/eclipse
 ```
