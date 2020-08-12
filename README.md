@@ -185,5 +185,4 @@ Type=Application
 Categories=Development;Programming
 StartupNotify=false" \
 >> ~/.local/share/applications/eclipse.desktop
-rm ~/.config/menus/cinnamon-applications.menu
 ```
