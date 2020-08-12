@@ -155,7 +155,7 @@ ECLIPSE_FILE=https://github-production-release-asset-2e65be.s3.amazonaws.com/927
 
 cd ~/Downloads
 
-if command -v curl; then
-        curl  $ECLIPSE_FILE
+if command -v wget; then
+        wget -c  $ECLIPSE_FILE
 fi
 ```
