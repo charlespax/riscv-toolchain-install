@@ -1,6 +1,8 @@
 # riscv-toolchain-install
 Notes on how to install gnu-mcu-eclipse for risc-v development, specifically on the Logan Nano board (GD32VF103).
 
+These are the notes I've made after trying to follow the instructions at https://gnu-mcu-eclipse.github.io/
+
 In the proceeding steps I will present terminal commands that include `if` statements. This is to check if the relevent programs are already installed or if the relevent files/directories already exist. If you don't know what you're doing, just copy the whole text and paste it into the terminal. If you do know what you're doing you can just copy the individual commands, but you already knew that.
 
 # Optional preparation
