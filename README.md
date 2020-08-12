@@ -165,6 +165,12 @@ tar -xvzf ~/Downloads/*gnumcueclipse*.tar.gz -C ~/
 ```
 Make a menu shortcut
 ```
+if [[ id ~/.local/share/applications; then
+	echo "shortfut dir exists."
+else
+	mkdir ~/.local/share/applications
+fi
+
 ECLIPSE=/eclipse/eclipse
 FULL_PATH=$HOME$ECLIPSE
 echo \
