@@ -174,5 +174,5 @@ Exec=$FULL_PATH \
 Terminal=false \
 Type=Application \
 Icon=/full/path/to/the/icon-file \
->> ~/.local/chare/applications/eclipse.desktop
+>> ~/.local/share/applications/eclipse.desktop
 ```
