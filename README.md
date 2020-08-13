@@ -1,28 +1,32 @@
 This document was last updated on 2020-08-11
 
 # riscv-toolchain-install
-This document is a series of notes on how I have installed and configured gnu-mcu-eclipse for risc-v development, specifically on the Logan Nano board (GD32VF103).
+This document is a series of notes on how I have installed and configured gnu-mcu-eclipse for risc-v development, specifically on the Logan Nano board (GD32VF103). The software is installed on a system running Linux Mint 20 64-bit.
 
 The instructions are based on the information located at https://gnu-mcu-eclipse.github.io.
 
 In the proceeding steps I will present terminal commands that include `if` statements. This is to check if the relevent programs are already installed or if the relevent files/directories already exist. If you don't know what you're doing, just copy the whole text and paste it into the terminal. If you do know what you're doing you can just copy the individual commands, but you already knew that.
 
 # Optional preparation (optional)
-I am doing this using VirtualBox running on a linux host. I recommend doing the same for your initial setup. Trust me, you'll want to take snapshots when things go right and revert back to them when things go wrong. There will be a few extra steps to ensure your hardware can talk to the virtual machine, but it is worth the effort.
+For your first time I recomment installing all of this in a virtual machine. Trust me, you'll want to take snapshots when things go right and revert back to them when things go wrong. There will be a few extra steps to ensure your hardware can talk to the virtual machine, but it is worth the effort.
 
-## Install VirtualBox (optional)
+## Install VirtualBox
 Install the latest VirtualBox on your system. Also install the extensions pack.
 
-## Install Linux Mint 20 (optional)
-The Linux Mint installer will require a little over 12 GB of storage, so make a VM around 20 GB or greater. Maybe another version or distro would work, but this is what I'm using here. When the system is installed, do a system update using the following command.
+## Install Linux Mint 20
+Download Linux Mint 20 from https://linuxmint.com/edition.php?id=281
+
+The Linux Mint 20 installer will require a little over 12 GB of storage, so make a VM around 20 GB or greater. Maybe another version or distro would work, but this is what I'm using here.
+
+After the system is installed, do a system update using the following commands.
 ```
 sudo apt-get update -y
 sudo apt-get dist-upgrade -y
 sudo apt-get autoremove -y
 ```
 
-## Install Virtual guest additions (optional)
-We'll probably want the Guest Additions in order to copy and paste between the host operating system and the guest operating system. This is not necessary, but it can make things convenient.
+## Install Virtual guest additions
+Installing the Virtual Guest Additions will allow you to copy and paste between the guest and host operating systems. I think it's also required for connecting physical USB devices to the guest operating system.
 
 Fire up a terminal in the guest operating system and execute the following command.
 ```
@@ -31,6 +35,12 @@ sudo apt-get install -y gcc make perl
 
 In the VirtualBox window of your guest operating system go to Devices - Insert Guest Additions CD Image. A window should pop up and ask you if you would like to run "VBox\_GAs". Click "Run".
 
+Enable copy-and-paste between the guest and host operating systems by selecting Devices, Shared Clipboard, Bidirectional.
+
+Restart the system with the following command or by using the menu in the upper right corner of your virtual machine desktop.
+```
+sudo reboot
+```
 
 # Install git
 You will need `git` to install several pieces of software.
@@ -40,23 +50,12 @@ In a terminal execute the following command.
 sudo apt-get install -y git
 ```
 
-Make a directory to put aur github repositories
+Make a directory to put our github repositories
 ```
 if [[ -d ~/github ]]; then
     	echo "~/github already exists."
 else
     	mkdir ~/github
-fi
-```
-
-# download and link dotfiles
-```
-if [[ -d ~/github/dotfiles ]]; then
-	echo "dotfiles already exists."
-else
-	cd ~/github
-	git clone https://github.com/charlespax/dotfiles
-	bash ~/github/dotfiles/link.sh
 fi
 ```
 
