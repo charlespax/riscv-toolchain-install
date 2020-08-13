@@ -198,6 +198,16 @@ quickStart=false
 tipsAndTricks=true
 ```
 
+Command:
+```
+echo "PROBLEMS_FILTERS_MIGRATE=true
+SAVE_ALL_BEFORE_BUILD=true
+eclipse.preferences.version=1
+platformState=1597324309252
+quickStart=false
+tipsAndTricks=true" > /home/mcu/eclipse-workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs
+```
+
 ## Use active build configuration
 File:
 ```
