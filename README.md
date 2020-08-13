@@ -197,3 +197,36 @@ platformState=1597324309252
 quickStart=false
 tipsAndTricks=true
 ```
+
+## Use active build configuration
+File:
+```
+/home/mcu/eclipse-workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.cdt.core.prefs
+```
+
+Text
+```
+build.all.configs.enabled=false
+build.proj.ref.configs.enabled=false
+doxygen/doxygen_new_line_after_brief=true
+doxygen/doxygen_use_brief_tag=false
+doxygen/doxygen_use_javadoc_tags=true
+doxygen/doxygen_use_pre_tag=false
+doxygen/doxygen_use_structural_commands=false
+eclipse.preferences.version=1
+indexer/indexAllFiles=true
+indexer/indexAllHeaderVersions=false
+indexer/indexAllVersionsSpecificHeaders=
+indexer/indexOnOpen=false
+indexer/indexUnusedHeadersWithDefaultLang=true
+indexer/indexerId=org.eclipse.cdt.core.fastIndexer
+indexer/skipFilesLargerThanMB=8
+indexer/skipImplicitReferences=false
+indexer/skipIncludedFilesLargerThanMB=16
+indexer/skipMacroReferences=false
+indexer/skipReferences=false
+indexer/skipTypeReferences=false
+indexer/updatePolicy=0
+indexer/useHeuristicIncludeResolution=true
+macros/workspace=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<macros/>\n
+```
