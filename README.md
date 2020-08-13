@@ -106,7 +106,7 @@ The JLink software depends on the `ncurses` library. Install it by executing the
 if command -v ncurses; then
         echo "ncurses is already installed."
 else
-	sudo apt-get install libncurses5
+	sudo apt-get install -y libncurses5
 fi
 ```
 
@@ -115,7 +115,7 @@ Go to the Segger web site by executing the following command.
 firefox https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb
 ```
 
- Accept the agreement by ckecking the box, and click "Download Software." Save the file to your Downloads directory `~/Downloads`.
+ Accept the agreement by ckecking the box, and click "Download Software." Save the file to your Downloads directory `~/Downloads`. Close the Firefox window.
 
 Execute the following command.
 ```
@@ -135,29 +135,13 @@ else
 fi
 ```
 
-# install QEMU (DON'T DO)
-This iseems to be for ARM, so maybe don't install it.
-```
-if comman d -v ~/opt/xPacks/@xpack-dev-tools/qemu-arm/2.8.0-9.1; then
-        echo "qemu is already installed."
-else
-        xpm install --global @xpack-dev-tools/qemu-arm@latest
-fi
-```
-
-# install java
-This should already be installed.
-
 # install Eclipse and CDT
 
 ```
 ECLIPSE_FILE=http://eclipse.mirror.rafal.ca/embed-cdt/packages/2020-06/eclipse-embedcdt-2020-06-R-linux.gtk.x86_64.tar.gz
 
 cd ~/Downloads
-
-if command -v wget; then
-        wget -c $ECLIPSE_FILE
-fi
+wget -c $ECLIPSE_FILE
 ```
 
 Extract eclipse
@@ -186,4 +170,30 @@ Type=Application
 Categories=Development;Programming
 StartupNotify=false" \
 >> ~/.local/share/applications/eclipse.desktop
+```
+
+If want the Eclipse IDE menu entry to appear in the menu, you have to log out and log back in. I simply haven't found a way to automate this.
+
+# Othe Notes
+This section is just a vew notes I'm taking while writing this document.
+
+To find which preferenc files have been changed use the following command.
+```
+find ~  -type f -mmin -1
+```
+
+## Enable automatic save
+File:
+```
+/home/mcu/eclipse-workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs
+```
+
+Text:
+```
+PROBLEMS_FILTERS_MIGRATE=true
+SAVE_ALL_BEFORE_BUILD=true
+eclipse.preferences.version=1
+platformState=1597324309252
+quickStart=false
+tipsAndTricks=true
 ```
