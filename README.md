@@ -62,7 +62,8 @@ fi
 # install  node.js
 ```
 if command -v nodejs &> /dev/null; then
-	echo "node.js is already installed to `command -v`"
+    TEMP_VAR=`command -v nodejs`
+	echo "node.js is already installed to $TEMP_VAR"
 else
 	sudo apt-get install -y nodejs
 fi
