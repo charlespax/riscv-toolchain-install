@@ -68,7 +68,6 @@ else
 fi
 ```
 
-
 # install npm
 ```
 if command -v npm; then
@@ -78,7 +77,6 @@ else
 fi
 ```
 
-
 # install xpm
 ```
 if command -v xpm; then
@@ -87,7 +85,6 @@ else
 	sudo npm install --global xpm@latest
 fi
 ```
-
 
 # install xpack-dev-tools
 ```
@@ -113,9 +110,14 @@ else
 fi
 ```
 
-Go to https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb, accept the agreement by ckecking the box, and click "Download."
+Go to the Segger web site by executing the following command.
+```
+https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb
+```
 
-Save the file to your Downloads directory `~/Downloads`. Execute the following command.
+ Accept the agreement by ckecking the box, and click "Download Software." Save the file to your Downloads directory `~/Downloads`.
+
+Execute the following command.
 ```
 if command -v JLinkGDBServer; then
 	echo "jlink is already installed."
