@@ -1,20 +1,20 @@
 This document was last updated on 2020-08-11
 
 # riscv-toolchain-install
-Notes on how to install gnu-mcu-eclipse for risc-v development, specifically on the Logan Nano board (GD32VF103).
+This document is a series of notes on how I have installed and configured gnu-mcu-eclipse for risc-v development, specifically on the Logan Nano board (GD32VF103).
 
-These are the notes I've made after trying to follow the instructions at https://gnu-mcu-eclipse.github.io/
+The instructions are based on the information located at https://gnu-mcu-eclipse.github.io.
 
 In the proceeding steps I will present terminal commands that include `if` statements. This is to check if the relevent programs are already installed or if the relevent files/directories already exist. If you don't know what you're doing, just copy the whole text and paste it into the terminal. If you do know what you're doing you can just copy the individual commands, but you already knew that.
 
-# Optional preparation
-I am doing this using VirtualBox running on a linux host. I recomment doing the same for your initial setup. Trust me, you'll want to take snapshots when things go right and revert back to them when things go wrong. The overal experience of getting the toolchain setup is, to be polite, challenging.
+# Optional preparation (optional)
+I am doing this using VirtualBox running on a linux host. I recommend doing the same for your initial setup. Trust me, you'll want to take snapshots when things go right and revert back to them when things go wrong. There will be a few extra steps to ensure your hardware can talk to the virtual machine, but it is worth the effort.
 
 ## Install VirtualBox (optional)
-There is no special instructions here.
+Install the latest VirtualBox on your system. Also install the extensions pack.
 
 ## Install Linux Mint 20 (optional)
-Maybe another version or distro would work, but this is what I'm using here. When the system is installed, do a system update using the following command.
+The Linux Mint installer will require a little over 12 GB of storage, so make a VM around 20 GB or greater. Maybe another version or distro would work, but this is what I'm using here. When the system is installed, do a system update using the following command.
 ```
 sudo apt-get update -y
 sudo apt-get dist-upgrade -y
