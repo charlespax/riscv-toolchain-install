@@ -112,7 +112,7 @@ fi
 
 Go to the Segger web site by executing the following command.
 ```
-https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb
+firefox https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb
 ```
 
  Accept the agreement by ckecking the box, and click "Download Software." Save the file to your Downloads directory `~/Downloads`.
