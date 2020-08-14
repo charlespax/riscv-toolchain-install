@@ -269,6 +269,11 @@ Add the platformio binaries to your PATH
 echo export PATH=$HOME/.platformio/penv/bin:$PATH >> ~/.bashrc
 ```
 
+Add openocd to your path.
+```
+echo export PATH=$HOME/.platformio/packages/tool-openocd-gd32v/bin
+```
+
 Install GD32V platform definition
 ```
 platformio platform install gd32v
