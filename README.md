@@ -122,7 +122,7 @@ Execute the following command.
 if command -v JLinkGDBServer; then
 	echo "jlink is already installed."
 else
-	sudo dpkg -i ~/Downloads/JLink_Linux_V682c_x86_64.deb
+	sudo dpkg -i ~/Downloads/JLink_Linux_V*_x86_64.deb
 fi
 ```
 
@@ -269,10 +269,17 @@ Add the platformio binaries to your PATH
 echo export PATH=$HOME/.platformio/penv/bin:$PATH >> ~/.bashrc
 ```
 
-Install libusb, which is needed by oenocd
+maybeInstall libusb, which is needed by oenocd
 ```
 sudo apt-get install libusb-0.1-4 -y
 ```
+
+maybe And libftdi
+```
+sudo apt-get install libftdi1
+```
+
+maybe and libhidapi-hidraw0 libncursesw5
 
 Add openocd to your path.
 ```
