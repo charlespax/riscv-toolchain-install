@@ -240,3 +240,53 @@ indexer/updatePolicy=0
 indexer/useHeuristicIncludeResolution=true
 macros/workspace=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<macros/>\n
 ```
+
+# Install PlatformiO
+Install and update Linux Mint as described above.
+
+Install python
+```
+sudo apt-get install python3-distutils -y
+```
+
+Download VS Code"
+```
+wget -c https://az764295.vo.msecnd.net/stable/db40434f562994116e5b21c24015a2e40b2504e6/code_1.48.0-1597304990_amd64.deb
+```
+
+Install
+```
+sudo dpkg -i code*.deb
+```
+
+Install PlatformIO extensions:
+```
+code --install-extension platformio.platformio-ide
+```
+
+Add the platformio binaries to your PATH
+```
+echo export PATH=$HOME/.platformio/penv/bin:$PATH >> ~/.bashrc
+```
+
+Install GD32V platform definition
+```
+platformio platform install gd32v
+```
+
+When uploading to the Nano, platformio will install `tool-gd32vflash` and `tool-dfuutil`. Figure out how to install these before running the application.
+
+Add the Longan Nano UDEV rule
+```
+sudo echo "# Longan Nano, make the device world writeable.
+ATTRS{idVendor}=="28e9", ATTRS{idProduct}=="0189", MODE="0666"
+# Better yet, set to a group using, for example, GROUP="sudo"" >> /etc/udev/rules.d/99-platformio-udev.rules
+```
+
+Reload `udev` rules
+```
+sudo udevadm control --reload
+```
+
+
+
