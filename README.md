@@ -279,7 +279,7 @@ When uploading to the Nano, platformio will install `tool-gd32vflash` and `tool-
 Add the Longan Nano UDEV rule
 ```
 sudo echo "# Longan Nano, make the device world writeable.
-ATTRS{idVendor}=="28e9", ATTRS{idProduct}=="0189", MODE="0666" >> /etc/udev/rules.d/99-platformio-udev.rules
+ATTRS{idVendor}==\"28e9\", ATTRS{idProduct}==\"0189\", MODE=\"0666\" " >> /etc/udev/rules.d/99-platformio-udev.rules
 ```
 
 Reload `udev` rules
