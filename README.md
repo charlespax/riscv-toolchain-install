@@ -269,9 +269,14 @@ Add the platformio binaries to your PATH
 echo export PATH=$HOME/.platformio/penv/bin:$PATH >> ~/.bashrc
 ```
 
+Install libusb, which is needed by oenocd
+```
+sudo apt-get install libusb-0.1-4 -y
+```
+
 Add openocd to your path.
 ```
-echo export PATH=$HOME/.platformio/packages/tool-openocd-gd32v/bin
+echo export PATH=$HOME/.platformio/packages/tool-openocd-gd32v/bin >> ~/.bashrc
 ```
 
 Install GD32V platform definition
