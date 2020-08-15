@@ -266,7 +266,7 @@ code --install-extension platformio.platformio-ide
 
 Add the platformio binaries to your PATH
 ```
-echo export PATH=$HOME/.platformio/penv/bin:$PATH >> ~/.bashrc
+echo export PATH=$PATH:$HOME/.platformio/penv/bin:$PATH >> ~/.bashrc
 ```
 
 maybeInstall libusb, which is needed by oenocd
@@ -283,7 +283,7 @@ maybe and libhidapi-hidraw0 libncursesw5
 
 Add openocd to your path.
 ```
-echo export PATH=$HOME/.platformio/packages/tool-openocd-gd32v/bin >> ~/.bashrc
+echo export PATH=$PATH:$HOME/.platformio/packages/tool-openocd-gd32v/bin >> ~/.bashrc
 ```
 
 Install GD32V platform definition
@@ -300,6 +300,13 @@ ATTRS{idVendor}==\"28e9\", ATTRS{idProduct}==\"0189\", MODE=\"0666\" " | \
 sudo tee --append /etc/udev/rules.d/99-platformio-udev.rules
 ```
 
+Add the Longan Nano JLink rule
+```
+echo "# Segger JLink, make the device world writeable.
+ATTRS{idVendor}==\"1366\", ATTRS{idProduct}==\"0101\", MODE=\"0666\" " | \
+sudo tee --append /etc/udev/rules.d/99-platformio-udev.rules
+
+```
 Reload `udev` rules
 ```
 sudo udevadm control --reload
