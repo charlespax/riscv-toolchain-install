@@ -1,9 +1,7 @@
-This document was last updated on 2020-08-11
+This document was last updated on 2020-08-16
 
 # riscv-toolchain-install
-This document is a series of notes on how I have installed and configured gnu-mcu-eclipse for risc-v development, specifically on the Logan Nano board (GD32VF103). The software is installed on a system running Linux Mint 20 64-bit.
-
-The instructions are based on the information located at https://gnu-mcu-eclipse.github.io.
+This document gives instructions on how to get code running on the Longan Nano with debugging support. At the end you will be able to compile and load code onto your device and be able to connect to your device for debugging (i.e. read registers, change variables, set/use breakpoints, ets.).
 
 In the proceeding steps I will present terminal commands that include `if` statements. This is to check if the relevent programs are already installed or if the relevent files/directories already exist. If you don't know what you're doing, just copy the whole text and paste it into the terminal. If you do know what you're doing you can just copy the individual commands, but you already knew that.
 
@@ -59,204 +57,30 @@ else
 fi
 ```
 
-# install  node.js
-```
-if command -v nodejs; then
-	echo "node.js is already installed."
-else
-	sudo apt-get install -y nodejs
-fi
-```
+# Microsoft VSCode 
+VSCode is a wonderful open-source integrated development environment (IDE) from Microsoft. First we install this and then we will install extensions to allow development with the Longan Nano board form Sipeed.
 
-# install npm
-```
-if command -v npm; then
-	echo "npm is already installed."
-else
-	sudo apt-get install -y npm
-fi
-```
-
-# install xpm
-```
-if command -v xpm; then
-	echo "xpm is already installed."
-else
-	sudo npm install --global xpm@latest
-fi
-```
-
-# install xpack-dev-tools
-```
-if command -v ~/opt/xPacks/\@xpack-dev-tools/riscv-none-embed-gcc/8.3.0-1.2.1/.content/bin/riscv-none-embed-gcc; then
-	echo "riscv-non-embed-gcc is already installed."
-else
-	xpm install --global @xpack-dev-tools/riscv-none-embed-gcc@latest
-fi
-```
-
-# install Segger J-Link support
-The instructions that I've read all utilize the Segger J-Link debugger probe. For hobbiests, just go buy the education version (https://www.segger.com/products/debug-probes/j-link/models/j-link-edu-mini/). Get that working before trying to use another probe.
-
-Note: Segger's Longan Nano wiki page https://wiki.segger.com/SiPeed_Longan_Nano
-Note: J-Link hardware revisions 10 and above support risc-v, lower revisions do not. For a feature comparison overview see https://wiki.segger.com/Software_and_Hardware_Features_Overview
-
-The JLink software depends on the `ncurses` library. Install it by executing the following command.
-```
-if command -v ncurses; then
-        echo "ncurses is already installed."
-else
-	sudo apt-get install -y libncurses5
-fi
-```
-
-Go to the Segger web site by executing the following command.
-```
-firefox https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb
-```
-
- Accept the agreement by ckecking the box, and click "Download Software." Save the file to your Downloads directory `~/Downloads`. Close the Firefox window.
-
-Execute the following command.
-```
-if command -v JLinkGDBServer; then
-	echo "jlink is already installed."
-else
-	sudo dpkg -i ~/Downloads/JLink_Linux_V*_x86_64.deb
-fi
-```
-
-# install OpenOCD
-```
-if command -v ~/opt/xPacks/@xpack-dev-tools/openocd/0.10.0-14.3/.content/bin/openocd; then
-	echo "openocd is already installed."
-else
-        xpm install --global @xpack-dev-tools/openocd@latest
-fi
-```
-
-# install Eclipse and CDT
-
-```
-ECLIPSE_FILE=http://eclipse.mirror.rafal.ca/embed-cdt/packages/2020-06/eclipse-embedcdt-2020-06-R-linux.gtk.x86_64.tar.gz
-
-cd ~/Downloads
-wget -c $ECLIPSE_FILE
-```
-
-Extract eclipse
-```
-tar -xvzf ~/Downloads/eclipse-embedcdt-2020-06-R-linux.gtk.x86_64.tar.gz -C ~/
-```
-Make a menu shortcut
-```
-if [[ -d ~/.local/share/applications ]]; then
-	echo "shortcut dir exists."
-else
-	mkdir -p ~/.local/share/applications
-fi
-
-ECLIPSE=/eclipse/eclipse
-ICON=/eclipse/icon.xpm
-FULL_PATH=$HOME$ECLIPSE
-echo " [Desktop Entry]
-Encoding=UTF-8
-Name=Eclipse IDE
-Comment=Eclipse IDE
-Exec=$FULL_PATH
-Icon=$HOME$ICON
-Terminal=false
-Type=Application
-Categories=Development;Programming
-StartupNotify=false" \
->> ~/.local/share/applications/eclipse.desktop
-```
-
-If want the Eclipse IDE menu entry to appear in the menu, you have to log out and log back in. I simply haven't found a way to automate this.
-
-# Othe Notes
-This section is just a vew notes I'm taking while writing this document.
-
-To find which preferenc files have been changed use the following command.
-```
-find ~  -type f -mmin -1
-```
-
-## Enable automatic save
-File:
-```
-/home/mcu/eclipse-workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs
-```
-
-Text:
-```
-PROBLEMS_FILTERS_MIGRATE=true
-SAVE_ALL_BEFORE_BUILD=true
-eclipse.preferences.version=1
-platformState=1597324309252
-quickStart=false
-tipsAndTricks=true
-```
-
-Command:
-```
-echo "PROBLEMS_FILTERS_MIGRATE=true
-SAVE_ALL_BEFORE_BUILD=true
-eclipse.preferences.version=1
-platformState=1597324309252
-quickStart=false
-tipsAndTricks=true" > /home/mcu/eclipse-workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs
-```
-
-## Use active build configuration
-File:
-```
-/home/mcu/eclipse-workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.cdt.core.prefs
-```
-
-Text
-```
-build.all.configs.enabled=false
-build.proj.ref.configs.enabled=false
-doxygen/doxygen_new_line_after_brief=true
-doxygen/doxygen_use_brief_tag=false
-doxygen/doxygen_use_javadoc_tags=true
-doxygen/doxygen_use_pre_tag=false
-doxygen/doxygen_use_structural_commands=false
-eclipse.preferences.version=1
-indexer/indexAllFiles=true
-indexer/indexAllHeaderVersions=false
-indexer/indexAllVersionsSpecificHeaders=
-indexer/indexOnOpen=false
-indexer/indexUnusedHeadersWithDefaultLang=true
-indexer/indexerId=org.eclipse.cdt.core.fastIndexer
-indexer/skipFilesLargerThanMB=8
-indexer/skipImplicitReferences=false
-indexer/skipIncludedFilesLargerThanMB=16
-indexer/skipMacroReferences=false
-indexer/skipReferences=false
-indexer/skipTypeReferences=false
-indexer/updatePolicy=0
-indexer/useHeuristicIncludeResolution=true
-macros/workspace=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<macros/>\n
-```
-
-# Install PlatformiO
-Install and update Linux Mint as described above.
-
-Install python
-```
-sudo apt-get install python3-distutils -y
-```
+*TODO: Add link to the download page in case the download link no longer works.*
 
 Download VS Code"
 ```
 wget -c https://az764295.vo.msecnd.net/stable/db40434f562994116e5b21c24015a2e40b2504e6/code_1.48.0-1597304990_amd64.deb
 ```
 
-Install
+Install VS Code
 ```
 sudo dpkg -i code*.deb
+```
+
+Verify VS Code is working
+```
+code --version
+```
+
+# Install PlatformiO
+The command below may not be necessary, verify.
+```
+sudo apt-get install python3-distutils -y
 ```
 
 Install PlatformIO extensions:
@@ -269,21 +93,9 @@ Add the platformio binaries to your PATH
 echo export PATH=$PATH:$HOME/.platformio/penv/bin:$PATH >> ~/.bashrc
 ```
 
-maybeInstall libusb, which is needed by oenocd
+Install some dependencies, which are needed by oenocd
 ```
-sudo apt-get install libusb-0.1-4 -y
-```
-
-maybe And libftdi
-```
-sudo apt-get install libftdi1
-```
-
-maybe and libhidapi-hidraw0 libncursesw5
-
-Add openocd to your path.
-```
-echo export PATH=$PATH:$HOME/.platformio/packages/tool-openocd-gd32v/bin >> ~/.bashrc
+sudo apt-get install libusb-0.1-4 -y libftdi1 libhidapi-hidraw0 libncursesw5
 ```
 
 Install GD32V platform definition
@@ -312,5 +124,9 @@ Reload `udev` rules
 sudo udevadm control --reload
 ```
 
-
+Add openocd to your path. OpenOCD will be installed later by PlatformIO when we
+run it, but we can add it to the `PATH` now.
+```
+echo export PATH=$PATH:$HOME/.platformio/packages/tool-openocd-gd32v/bin >> ~/.bashrc
+```
 
