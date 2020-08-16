@@ -40,7 +40,8 @@ Restart the system with the following command or by using the menu in the upper 
 sudo reboot
 ```
 
-# Update your system
+# Install the development environment
+## Update your system
 This all assumes you have Linux Mint 20 installed.
 
 Update your system with the following commands
@@ -48,7 +49,7 @@ Update your system with the following commands
 sudo apt-get update -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y
 ```
 
-# Install git
+## Install git
 You will need `git` to install several pieces of software.
 
 In a terminal execute the following command.
@@ -65,7 +66,7 @@ else
 fi
 ```
 
-# Microsoft VSCode 
+## Microsoft VSCode 
 VSCode is a wonderful open-source integrated development environment (IDE) from Microsoft. First we install this and then we will install extensions to allow development with the Longan Nano board form Sipeed.
 
 *TODO: Add link to the download page in case the download link no longer works.*
@@ -85,7 +86,7 @@ Verify VS Code is working
 code --version
 ```
 
-# Install PlatformiO
+## Install PlatformiO
 The command below may not be necessary, verify.
 ```
 sudo apt-get install python3-distutils -y
