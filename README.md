@@ -61,7 +61,7 @@ wget -c https://az764295.vo.msecnd.net/stable/db40434f562994116e5b21c24015a2e40b
 
 Install VS Code
 ```
-sudo dpkg -i code*.deb
+sudo dpkg -i ~/Downloads/code*.deb
 ```
 
 Verify VS Code is working
