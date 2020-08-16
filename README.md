@@ -49,23 +49,6 @@ Update your system with the following commands
 sudo apt-get update -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y
 ```
 
-## Install git
-You will need `git` to install several pieces of software.
-
-In a terminal execute the following command.
-```
-sudo apt-get install -y git
-```
-
-Make a directory to put our github repositories
-```
-if [[ -d ~/github ]]; then
-    	echo "~/github already exists."
-else
-    	mkdir ~/github
-fi
-```
-
 ## Microsoft VSCode 
 VSCode is a wonderful open-source integrated development environment (IDE) from Microsoft. First we install this and then we will install extensions to allow development with the Longan Nano board form Sipeed.
 
