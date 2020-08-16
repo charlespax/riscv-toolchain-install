@@ -70,7 +70,7 @@ code --version
 ```
 
 ## Install PlatformiO
-The command below may not be necessary, verify.
+Install dependencies otherwise you'll get errors the first time you run VS Code.
 ```
 sudo apt-get install python3-distutils -y
 ```
@@ -85,7 +85,7 @@ Add the platformio binaries to your PATH
 echo export PATH=$PATH:$HOME/.platformio/penv/bin:$PATH >> ~/.bashrc
 ```
 
-Install some dependencies, which are needed by oenocd
+Install some dependencies, which are needed by OpenOCD
 ```
 sudo apt-get install libusb-0.1-4 -y libftdi1 libhidapi-hidraw0 libncursesw5
 ```
@@ -120,5 +120,10 @@ Add openocd to your path. OpenOCD will be installed later by PlatformIO when we
 run it, but we can add it to the `PATH` now.
 ```
 echo export PATH=$PATH:$HOME/.platformio/packages/tool-openocd-gd32v/bin >> ~/.bashrc
+```
+
+Run VS Code for the first time
+```
+code
 ```
 
