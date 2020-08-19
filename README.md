@@ -110,6 +110,12 @@ echo "# Segger JLink, make the device world writeable.
 ATTRS{idVendor}==\"1366\", ATTRS{idProduct}==\"0101\", MODE=\"0666\" " | \
 sudo tee --append /etc/udev/rules.d/99-platformio-udev.rules
 
+Add Sipeed debugger rule
+```
+echo "# Segger JLink, make the device world writeable.
+ATTRS{idVendor}==\"0403\", ATTRS{idProduct}==\"6010\", MODE=\"0666\" " | \
+sudo tee --append /etc/udev/rules.d/99-platformio-udev.rules
+
 ```
 Reload `udev` rules
 ```
