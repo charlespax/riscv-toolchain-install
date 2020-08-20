@@ -133,3 +133,9 @@ Run VS Code for the first time
 code
 ```
 
+Edit a file to prevent an error. See bottom of https://blog.2gn.com/posts/gd32vf103-with-ft2232h/
+
+~/.platformio/packages/tool-openocd-gd32v/share/openocd/scripts/target/gd32vf103.cfg
+
+jtag newtap $_CHIPNAME cpu -irlen 5 -expected-id 0x1000563d
+
